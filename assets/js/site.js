@@ -218,9 +218,15 @@
   /* ---------------- menu ---------------- */
   function initMenu() {
     var btn = $(".menu-btn"), dr = $("#drawer"); if (!btn || !dr) return;
-    btn.addEventListener("click", function () {
-      var open = dr.hidden; dr.hidden = !open; btn.setAttribute("aria-expanded", String(open));
-    });
+    var path = btn.querySelector("path");
+    function set(open) {
+      dr.hidden = !open; btn.setAttribute("aria-expanded", String(open));
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      if (path) path.setAttribute("d", open ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16");
+    }
+    btn.addEventListener("click", function () { set(dr.hidden); });
+    dr.addEventListener("click", function (e) { if (e.target.closest && e.target.closest("a")) set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !dr.hidden) { set(false); btn.focus(); } });
   }
 
   /* ---------------- press lightbox ---------------- */
