@@ -22,10 +22,10 @@ window.BKIF = {
   /* ---- Donation tiers ---------------------------------------------------- */
   tiers: [
     { amount: 1000, women: 1 },
-    { amount: 2000, women: 2 },
+    { amount: 2500, women: 3 },
     { amount: 5000, women: 6 }
   ],
-  defaultTier: 2000,
+  defaultTier: 2500,
 
   /* ---- Payment links -----------------------------------------------------
      Best practice: one Razorpay Payment Page per amount, with the amount fixed
@@ -33,7 +33,7 @@ window.BKIF = {
      fields. Until those exist, every button opens the general page. */
   donateLinks: {
     1000: "https://rzp.io/rzp/bkif-sankalp-1000",
-    2000: "https://rzp.io/rzp/bkif-sankalp-2000",
+    2500: "https://rzp.io/rzp/bkif-sankalp-2500",
     5000: "https://rzp.io/l/bkif-sankalp-5000",
     // Use the long pages.razorpay.com address here: it keeps the amount the
     // donor typed (?donation=3000). The short rzp.io link drops it.

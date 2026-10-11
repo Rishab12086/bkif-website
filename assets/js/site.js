@@ -138,7 +138,7 @@
     var fcra = $("#fcraMsg", slip);
     var go = $("#donateBtn", slip);
     var hint = $("#slipHint", slip);
-    var amount = C.defaultTier || 2000, isCustom = false;
+    var amount = C.defaultTier || 2500, isCustom = false;
     var set = function (sel, txt) { var el = $(sel); if (el) el.textContent = txt; };
 
     function eligible() {
@@ -148,9 +148,9 @@
     function tierFor(a) { for (var i = 0; i < tiers.length; i++) if (tiers[i].amount === a) return tiers[i]; return null; }
     function womenText(a) {
       var t = tierFor(a);
-      if (t) return "Trains " + t.women + (t.women === 1 ? " woman" : " women");
-      if (a >= 1000) return "Helps train about " + Math.floor(a / 1000) + (Math.floor(a / 1000) === 1 ? " woman" : " women");
-      return "Goes towards a woman's training";
+      if (t) return "Sponsors " + t.women + (t.women === 1 ? " woman" : " women");
+      if (a >= 1000) return "Helps sponsor about " + Math.floor(a / 1000) + (Math.floor(a / 1000) === 1 ? " woman" : " women");
+      return "Goes towards sponsoring a woman";
     }
     function render() {
       var ok = amount >= 100, el = eligible();
@@ -176,7 +176,7 @@
     if (input) input.addEventListener("input", function () {
       var v = parseInt(input.value.replace(/[^\d]/g, ""), 10);
       if (input.value !== "" && String(v || "") !== input.value) input.value = v ? String(v) : "";
-      if (v) { amount = v; isCustom = !tierFor(v); } else { amount = C.defaultTier || 2000; isCustom = false; }
+      if (v) { amount = v; isCustom = !tierFor(v); } else { amount = C.defaultTier || 2500; isCustom = false; }
       hint.textContent = v && v < 100 ? "The minimum online donation is ₹100." : "";
       render();
     });
