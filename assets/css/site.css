@@ -1455,3 +1455,50 @@ dialog.lightbox::backdrop { background: rgba(10, 14, 12, .82); }
   .ev { padding: 18px 16px; }
   .venn-key { gap: 16px; }
 }
+
+/* ==========================================================
+   Thank-you page v2: a woman's face in the hero, photos in every section
+   ========================================================== */
+.thx2 { position: relative; isolation: isolate; overflow: hidden; background: var(--deep); color: #FFFFFF; }
+.thx2-bg { position: absolute; inset: 0; z-index: -1; }
+.thx2-bg img { position: absolute; top: 0; right: 0; width: 56%; height: 100%; object-fit: cover; object-position: 40% 18%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .55) 20%, #000 46%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .55) 20%, #000 46%); }
+.thx2-bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(55% 75% at 78% 45%, rgba(238, 0, 85, .16), transparent 70%); }
+.thx2-grid { display: grid; align-items: center; min-height: clamp(540px, 46vw, 660px); padding-block: clamp(48px, 7vw, 96px); }
+.thx2-copy { display: grid; gap: 20px; max-width: 610px; }
+.thx2 h1 { color: #FFFFFF; font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
+.thx2 h1 span { color: var(--rani); }
+.thx2 .status { background: rgba(255, 255, 255, .14); color: #FFFFFF; }
+.thx2-thanks { font-family: var(--font-display); font-size: clamp(1.35rem, 2.1vw, 1.7rem); line-height: 1.25; color: #FFFFFF; }
+.thx2-thanks strong { font-weight: 800; }
+.thx2-thanks .nw { white-space: nowrap; }
+.thx2-heart { display: inline-block; vertical-align: -.2em; margin-left: .3em; width: 1.15em; height: 1.15em; color: var(--rani); filter: drop-shadow(0 0 12px rgba(238, 0, 85, .55)); }
+.thx2 .lead { color: rgba(255, 255, 255, .88); max-width: 54ch; margin-top: -6px; }
+@media (max-width: 860px) {
+  .thx2-bg img { width: 100%; height: 400px; object-position: 35% 14%; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%); }
+  .thx2-bg::after { display: none; }
+  .thx2-grid { min-height: 0; padding-top: 290px; padding-bottom: 52px; }
+}
+
+.next3 { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.next3-side { display: grid; gap: 26px; }
+.next3-photo { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; }
+.next3-photo img { width: 100%; height: 100%; object-fit: cover; }
+.next3-steps { list-style: none; display: grid; gap: 14px; counter-reset: n; }
+.next3-steps li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 18px; align-items: start; background: #FFFFFF; border: 1px solid var(--line); border-left: 4px solid var(--rani); padding: 20px 22px; }
+.next3-steps .ic { width: 52px; height: 52px; display: grid; place-items: center; background: var(--rani-soft); color: var(--rani-ink); clip-path: polygon(0 0, 66% 0, 100% 34%, 100% 100%, 0 100%); }
+.next3-steps .ic svg { width: 24px; height: 24px; }
+.next3-steps h3 { font-size: 1.2rem; font-weight: 800; }
+.next3-steps p { color: var(--ink-2); margin-top: 4px; line-height: 1.55; }
+@media (max-width: 900px) { .next3 { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .next3-steps li { grid-template-columns: 42px minmax(0, 1fr); gap: 14px; padding: 16px; } .next3-steps .ic { width: 42px; height: 42px; } .next3-steps .ic svg { width: 20px; height: 20px; } }
+
+.share2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.share2-pics { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; gap: 12px; height: clamp(340px, 34vw, 460px); }
+.share2-pics figure { margin: 0; overflow: hidden; border-radius: var(--r-md); }
+.share2-pics .p1 { grid-row: 1 / span 2; }
+.share2-pics img { width: 100%; height: 100%; object-fit: cover; }
+.share2-pics .p1 img { object-position: 62% 50%; }
+.share2-pics .p2 img { object-position: 50% 30%; }
+@media (max-width: 860px) { .share2 { grid-template-columns: minmax(0, 1fr); } .share2-pics { height: 300px; } }
+@media (max-width: 520px) { .share2-pics { height: 260px; gap: 8px; } .share2 .share-btns { display: grid; grid-template-columns: minmax(0, 1fr); } .share2 .share-btns .btn { width: 100%; justify-content: center; } }
+.next3-steps a[href^="tel:"] { white-space: nowrap; }
